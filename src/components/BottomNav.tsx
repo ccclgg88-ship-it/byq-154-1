@@ -19,14 +19,42 @@ const tabs: TabItem[] = [
 interface BottomNavProps {
   activeTab: TabId;
   onTabChange: (tab: TabId) => void;
+  isDesktop?: boolean;
 }
 
-export default function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
+export default function BottomNav({ activeTab, onTabChange, isDesktop = false }: BottomNavProps) {
+  if (isDesktop) {
+    return (
+      <div className="flex items-center gap-2">
+        {tabs.map((tab) => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.id;
+          
+          return (
+            <button
+              key={tab.id}
+              onClick={() => onTabChange(tab.id)}
+              className={cn(
+                'flex items-center gap-2 px-5 py-2.5 rounded-2xl transition-all duration-300',
+                isActive
+                  ? 'text-dream-purple bg-dream-purple/15 shadow-inner-glow font-semibold'
+                  : 'text-night-400 hover:text-night-200 hover:bg-white/5 font-medium'
+              )}
+            >
+              <Icon className="w-5 h-5" />
+              <span>{tab.label}</span>
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 md:z-30 md:top-0 md:bottom-auto">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="glass-card md:!rounded-b-none md:border-b-0 md:border-t-0 !rounded-t-2xl md:!rounded-none !border-b-white/5 backdrop-blur-xl">
-          <div className="flex items-center justify-around md:justify-start md:gap-2 py-2 md:py-3">
+    <nav className="fixed bottom-0 left-0 right-0 z-40">
+      <div className="px-4">
+        <div className="glass-card !rounded-t-2xl !border-b-white/5 backdrop-blur-xl">
+          <div className="flex items-center justify-around py-2">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -38,10 +66,10 @@ export default function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
                   className={cn(
                     'tab-item',
                     isActive && 'tab-item-active',
-                    'flex-1 md:flex-none'
+                    'flex-1'
                   )}
                 >
-                  <Icon className="w-5 h-5 md:w-5 md:h-5" />
+                  <Icon className="w-5 h-5" />
                   <span className="text-xs font-medium">{tab.label}</span>
                 </button>
               );

@@ -275,7 +275,7 @@ export default function SleepTimer() {
                     onChange={(e) => setCustomDuration(e.target.value)}
                     placeholder="自定义分钟数"
                     disabled={timer.isRunning}
-                    className="flex-1 bg-white/8 border border-white/10 rounded-2xl px-4 py-3 text-night-100 placeholder-night-500 focus:outline-none focus:ring-2 focus:ring-dream-purple/50 disabled:opacity-50"
+                    className="flex-1 bg-white/15 border border-white/20 rounded-2xl px-4 py-3 text-night-100 placeholder-night-400 focus:outline-none focus:ring-2 focus:ring-dream-purple/60 focus:border-dream-purple/40 disabled:opacity-50 text-base"
                   />
                   <button
                     onClick={handleCustomDuration}

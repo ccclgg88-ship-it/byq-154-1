@@ -6,7 +6,7 @@ export const musicTracks: MusicTrack[] = [
     name: '绵绵细雨',
     category: 'rain',
     icon: 'cloud-rain',
-    audioUrl: '/audio/music/rain.mp3',
+    audioUrl: '/audio/music/rain.wav',
     defaultVolume: 0.6,
   },
   {
@@ -14,7 +14,7 @@ export const musicTracks: MusicTrack[] = [
     name: '温暖篝火',
     category: 'fire',
     icon: 'flame',
-    audioUrl: '/audio/music/fire.mp3',
+    audioUrl: '/audio/music/fire.wav',
     defaultVolume: 0.5,
   },
   {
@@ -22,7 +22,7 @@ export const musicTracks: MusicTrack[] = [
     name: '星空絮语',
     category: 'stars',
     icon: 'sparkles',
-    audioUrl: '/audio/music/stars.mp3',
+    audioUrl: '/audio/music/stars.wav',
     defaultVolume: 0.4,
   },
   {
@@ -30,7 +30,7 @@ export const musicTracks: MusicTrack[] = [
     name: '海浪轻拍',
     category: 'ocean',
     icon: 'waves',
-    audioUrl: '/audio/music/ocean.mp3',
+    audioUrl: '/audio/music/ocean.wav',
     defaultVolume: 0.5,
   },
   {
@@ -38,7 +38,7 @@ export const musicTracks: MusicTrack[] = [
     name: '森林低语',
     category: 'forest',
     icon: 'tree-pine',
-    audioUrl: '/audio/music/forest.mp3',
+    audioUrl: '/audio/music/forest.wav',
     defaultVolume: 0.45,
   },
   {
@@ -46,7 +46,7 @@ export const musicTracks: MusicTrack[] = [
     name: '微风拂面',
     category: 'wind',
     icon: 'wind',
-    audioUrl: '/audio/music/wind.mp3',
+    audioUrl: '/audio/music/wind.wav',
     defaultVolume: 0.35,
   },
 ];

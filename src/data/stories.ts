@@ -149,7 +149,7 @@ export const stories: Story[] = [
     petRecommendation: '这是我最喜欢的故事！星星好温柔~',
     coverColor: 'from-purple-400 to-pink-400',
     coverEmoji: '🐻✨',
-    audioUrl: '/audio/stories/fairy-1.mp3',
+    audioUrl: '/audio/stories/fairy-1.wav',
     script: generateScript(fairyTaleText, 300),
   },
   {
@@ -161,7 +161,7 @@ export const stories: Story[] = [
     petRecommendation: '森林里的小动物们都好可爱呀～',
     coverColor: 'from-green-400 to-teal-400',
     coverEmoji: '🌲🌙',
-    audioUrl: '/audio/stories/nature-1.mp3',
+    audioUrl: '/audio/stories/nature-1.wav',
     script: generateScript(natureStoryText, 280),
   },
   {
@@ -173,7 +173,7 @@ export const stories: Story[] = [
     petRecommendation: '听着雨声睡觉最舒服了zzz',
     coverColor: 'from-blue-400 to-cyan-400',
     coverEmoji: '🌧️💤',
-    audioUrl: '/audio/stories/whitenoise-1.mp3',
+    audioUrl: '/audio/stories/whitenoise-1.wav',
     script: generateScript(whiteNoiseText, 600),
   },
   {
@@ -185,7 +185,7 @@ export const stories: Story[] = [
     petRecommendation: '星星会唱歌哦！你听得到吗？',
     coverColor: 'from-indigo-400 to-purple-400',
     coverEmoji: '⭐🌙',
-    audioUrl: '/audio/stories/fairy-2.mp3',
+    audioUrl: '/audio/stories/fairy-2.wav',
     script: generateScript(starryNightText, 320),
   },
   {
@@ -197,7 +197,7 @@ export const stories: Story[] = [
     petRecommendation: '大海的声音最治愈啦~',
     coverColor: 'from-blue-500 to-indigo-400',
     coverEmoji: '🌊🐚',
-    audioUrl: '/audio/stories/nature-2.mp3',
+    audioUrl: '/audio/stories/nature-2.wav',
     script: generateScript(oceanDreamText, 260),
   },
   {
@@ -209,7 +209,7 @@ export const stories: Story[] = [
     petRecommendation: '小精灵会在你梦里跳舞哦～',
     coverColor: 'from-emerald-400 to-green-400',
     coverEmoji: '🧚🎵',
-    audioUrl: '/audio/stories/whitenoise-2.mp3',
+    audioUrl: '/audio/stories/whitenoise-2.wav',
     script: generateScript(forestLullabyText, 480),
   },
 ];

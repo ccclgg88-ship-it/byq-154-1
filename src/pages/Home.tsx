@@ -92,46 +92,82 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <header className="pt-4 pb-2 px-4 md:pt-6 md:px-6 md:pb-4">
+      <div className="hidden md:block fixed top-0 left-0 right-0 z-30 backdrop-blur-xl border-b border-white/5">
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            background: 'linear-gradient(180deg, rgba(8,17,34,0.95) 0%, rgba(15,23,42,0.85) 80%, rgba(15,23,42,0) 100%)',
+          }}
+        />
+        <div className="px-6 max-w-6xl mx-auto">
+          <header className="py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-dream-purple via-dream-pink to-dream-yellow flex items-center justify-center text-2xl shadow-glow">
+                  🌙
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold text-night-100 font-display">
+                    睡前故事角
+                  </h1>
+                  <p className="text-sm text-night-400">
+                    和圆嘟嘟一起安睡
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-sm text-night-400">
+                <span className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5">
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-night-300 text-xs font-mono">Space</kbd>
+                  <span>暂停/播放</span>
+                </span>
+                <span className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5">
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-night-300 text-xs font-mono">←</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-night-300 text-xs font-mono">→</kbd>
+                  <span>快进/快退 10s</span>
+                </span>
+              </div>
+            </div>
+          </header>
+
+          <div className="pb-3">
+            <BottomNav activeTab={activeTab} onTabChange={setActiveTab} isDesktop />
+          </div>
+        </div>
+      </div>
+
+      <header className="md:hidden pt-4 pb-2 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-gradient-to-br from-dream-purple via-dream-pink to-dream-yellow flex items-center justify-center text-xl md:text-2xl shadow-glow">
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-dream-purple via-dream-pink to-dream-yellow flex items-center justify-center text-xl shadow-glow">
                 🌙
               </div>
               <div>
-                <h1 className="text-xl md:text-2xl font-bold text-night-100 font-display">
+                <h1 className="text-xl font-bold text-night-100 font-display">
                   睡前故事角
                 </h1>
-                <p className="text-xs md:text-sm text-night-400">
+                <p className="text-xs text-night-400">
                   和圆嘟嘟一起安睡
                 </p>
               </div>
-            </div>
-
-            <div className="hidden md:flex items-center gap-4 text-sm text-night-400">
-              <span className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5">
-                <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-night-300 text-xs font-mono">Space</kbd>
-                <span>暂停/播放</span>
-              </span>
-              <span className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5">
-                <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-night-300 text-xs font-mono">←</kbd>
-                <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-night-300 text-xs font-mono">→</kbd>
-                <span>快进/快退 10s</span>
-              </span>
             </div>
           </div>
         </div>
       </header>
 
-      <main className="pb-32 md:pb-28 pt-4 px-4 md:px-6">
+      <main className="pb-32 md:pb-28 pt-4 px-4 md:px-6 md:pt-[170px]">
         <div className="max-w-6xl mx-auto">
           {renderContent()}
         </div>
       </main>
 
       <MiniPlayer />
-      <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
+      
+      <div className="md:hidden">
+        <BottomNav activeTab={activeTab} onTabChange={setActiveTab} isDesktop={false} />
+      </div>
+
       <GoodnightScreen />
       <RestoreTimerDialog />
       <AudioContextOverlay />

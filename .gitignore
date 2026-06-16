@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local tooling
+.trae
+
+# Environment
+.env
+.env.*
+!.env.example
